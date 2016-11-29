@@ -4,6 +4,8 @@ build_script:
 
     dotnet restore
 
+    cd src
+
     dotnet build
 
     dotnet pack
