@@ -1,0 +1,16 @@
+version: 0.0.{build}
+build_script:
+- cmd: >-
+
+    dotnet restore
+
+    dotnet build
+
+    dotnet pack
+artifacts:
+- path: '**/*.nupkg'
+deploy:
+  provider: NuGet
+  server: https://ci.appveyor.com/nuget/uatec-a70jaehq30jv
+  api_key: RebRaAlc6oUhDdl/q3EpoYKEfuepwku3uutS+hWO3io=
+  artifact: /.*\.nupkg/
